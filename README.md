@@ -211,6 +211,11 @@ docker stop onos
 docker rm onos
 ```
 
+this command used to enter onos /bin/bash directory and configuret from there
+
+```bash
+docker exec -it onos /bin/bash
+```
 
   
    
@@ -218,7 +223,7 @@ docker rm onos
 
 
 
-<!-- ROADMAP -->
+<!-- ROADMAP 
 ## Roadmap
 
 - [x] Add Changelog
@@ -232,7 +237,7 @@ docker rm onos
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- CONTRIBUTING -->
