@@ -1,13 +1,13 @@
 # control mininet hostes using ONOS - docker version.
 <a id="readme-top"></a>
-
+<!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Unlicense License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
+-->
 
 
 <!-- PROJECT LOGO 
@@ -217,7 +217,13 @@ this command used to enter onos /bin/bash directory and configuret from there
 docker exec -it onos /bin/bash
 ```
 
-  
+another user to connect to onos using ssh is karaf
+
+```bash
+ssh -p 8101 karaf@localhost
+password: karaf 
+```
+
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,7 +246,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 -->
 
 
-<!-- CONTRIBUTING -->
+<!-- CONTRIBUTING 
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -262,29 +268,29 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+-->
 
-
-<!-- LICENSE -->
+<!-- LICENSE 
 ## License
 
 Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+-->
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Ali Sulaiman - [@ialibxl](https://twitter.com/ialibxl)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/bixcl/ONOS-with-mininet](https://github.com/bixcl/ONOS-with-mininet)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGMENTS 
 ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
@@ -299,7 +305,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 [python-url]: https://www.python.org
 [docker-url]: https://www.docker.com/
