@@ -223,9 +223,9 @@ Use this space to list resources you find helpful and would like to give credit 
 [python-url]: https://www.python.org
 [python]: https://www.python.org/static/img/python-logo.png
 [docker-url]: https://www.docker.com/
-[docker]: https://docker.gallerycdn.vsassets.io/extensions/docker/docker/0.6.0/1745923953287/Microsoft.VisualStudio.Services.Icons.Default
+[docker]: https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256
 [json]:www.json.org
-[json-url]: https://www.json.org/img/json160.gif
+[json-url]: https://cdn.iconscout.com/icon/free/png-256/free-json-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226010.png?f=webp&w=256
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
