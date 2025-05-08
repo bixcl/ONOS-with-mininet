@@ -79,9 +79,10 @@ this project will offer full commands that you can use in linux that will make o
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Python][python]][python-url]
-* [![docker][docker]][docker-url]
-* [![json][json]][json-url]
+* [![Python]][python-url]
+* [![docker]][docker-url]
+* [![json]][json-url]
+* [![ubuntu]][ubuntu-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,36 +90,47 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
+#### installing docker
+first we need to update our linux machine, install docker, and start it, these comands will do the job.
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
   ```sh
-  npm install npm@latest -g
+  sudo apt update
+  sudo apt install -y docker.io
+  sudo systemctl start docker
+  sudo systemctl enable docker
+  sudo usermod -aG docker $USER
+
   ```
 
-### Installation
+### make ONOS run
+this command for making onos sdn controller run on port 8101.
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+   ```sh
+    docker run -d --name onos \
+    -p 8181:8181 -p 6653:6653 -p 8101:8101 \
+    onosproject/onos
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+   ```
+
+3. after starting docker successfuly we need to connect the onos through ssh in order to install the features we want
+   
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   ssh -p 8101 onos@localhost
    ```
-3. Install NPM packages
+
+   the ssh password for the user onos is <b>rocks</b>.
+
+5. after starting ssh succeflly we need to install these 3 feature
    ```sh
-   npm install
+      app activate org.onosproject.openflow # allow web interface
+      app activate org.onosproject.fwd # allow forword
+      app activate org.onosproject.acl # allow Access controll list
+
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
+6. now the onos sdn web page should be ready to access.<br>
+use this link in ur linux machine to access it : http://localhost:8181/onos/ui <br>
+username: onos
+password: rocks
    ```sh
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
@@ -217,15 +229,18 @@ Use this space to list resources you find helpful and would like to give credit 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [python-url]: https://www.python.org
-[python]: [https://www.python.org/static/img/python-logo.png](https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=100)
 [docker-url]: https://www.docker.com/
+[json-url]: www.json.org
+[ubuntu-url]: https://ubuntu.com/
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links 
+
+[python]: [https://www.python.org/static/img/python-logo.png](https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=100)
+
 [docker]: https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/ywjqppks5ffcnbfjuttq
 [json]:https://cdn.iconscout.com/icon/free/png-256/free-json-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226010.png?f=webp&w=256
-[json-url]: www.json.org
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
@@ -256,3 +271,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+-->
