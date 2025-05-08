@@ -80,8 +80,8 @@ this project will offer full commands that you can use in linux that will make o
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![Python][python]][python-url]
-* [![Jocker][docker]][docker-url]
-* [![Json][json]][json-url]
+* [![docker][docker]][docker-url]
+* [![json][json]][json-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -223,7 +223,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [python-url]: https://www.python.org
 [python]: https://www.python.org/static/img/python-logo.png
 [docker-url]: https://www.docker.com/
-[docker]: https://iconduck.com/icons/27288/docker
+[docker]: https://docker.gallerycdn.vsassets.io/extensions/docker/docker/0.6.0/1745923953287/Microsoft.VisualStudio.Services.Icons.Default
 [json]:www.json.org
 [json-url]: https://www.json.org/img/json160.gif
 
