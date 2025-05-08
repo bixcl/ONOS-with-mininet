@@ -221,11 +221,11 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [python-url]: https://www.python.org
-[python]: https://www.python.org/static/img/python-logo.png
+[python]: [https://www.python.org/static/img/python-logo.png](https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=100)
 [docker-url]: https://www.docker.com/
-[docker]: https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256
-[json]:www.json.org
-[json-url]: https://cdn.iconscout.com/icon/free/png-256/free-json-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226010.png?f=webp&w=256
+[docker]: https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/ywjqppks5ffcnbfjuttq
+[json]:https://cdn.iconscout.com/icon/free/png-256/free-json-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226010.png?f=webp&w=256
+[json-url]: www.json.org
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
