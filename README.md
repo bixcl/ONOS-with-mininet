@@ -1,4 +1,5 @@
 # control mininet hostes using ONOS - docker version.
+for more information read "Advanced Topics in Information Security-final project.docx" file
 <a id="readme-top"></a>
 <!--
 [![Contributors][contributors-shield]][contributors-url]
