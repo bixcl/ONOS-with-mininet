@@ -129,24 +129,91 @@ this command for making onos sdn controller run on port 8101.
    ```
 6. now the onos sdn web page should be ready to access.<br>
 use this link in ur linux machine to access it : http://localhost:8181/onos/ui <br>
-username: onos
+username: onos <br>
 password: rocks
+
+<sub>for images read the word file</sub>
+
+7. installing configuring mininet 
+
    ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+    sudo apt install mininet -y
+   ```
+    do this step in order to start openvswitch process, you need to do it again if you shutdown the system
+
+   ```sh
+    sudo service openvswitch-switch start
+    sudo /etc/init.d/openvswitch-switch start
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+8. Running mininet.
+   ```sh
+     sudo mn --topo tree,2,2 --mac --switch ovs,protocols=OpenFlow13 --controller remote,ip=127.0.0.1:6653
+   ```
+
+   <b>make sure its running on ur local host and its running on 6653 port.</b><br>
+   <h6>if u update the onos web page u will see that the devices is updated</h6><br>
+   try to ping all and see the diffrence after we apply the rules
+
+   ```mininet
+   mininet>pingall
+   ```
+8. now inside new terminal write this command, this command will deny icmp(ping) packets betwen h1 and h2
+  ```sh
+    curl -X POST -H "Content-Type: application/json" -u onos:rocks \
+  http://localhost:8181/onos/v1/acl/rules \
+  -d '{
+    "srcIp": "10.0.0.1/32", 
+    "dstIp": "10.0.0.2/32", 
+    "ipProto": "ICMP", 
+    "action": "DENY",
+    "priority": 40000
+  }'
+
+  ```
+
+9. this command you can use it to check if the rule successfully added to onos, and check the lists of rules.
+
+   ```sh
+      curl -u onos:rocks http://localhost:8181/onos/v1/acl/rules
+    ```
+   
+10. now this command you can use it to delet any rules by simply compy the rule id and put it at the end of this command
+
+   ```sh
+      curl -X DELETE -u onos:rocks http://localhost:8181/onos/v1/acl/rules/{ruleId} # keep the bracket
+  ```
+
+11. this is last step which is to check if our rule is working, simply return back to mininet page and pingall again.
+    
+    ```mininet
+    mininet> pingall
+    ```
 
 
+12. now i will give some less importent command you maybe need to know<br>
+  to stop onos
 
-<!-- USAGE EXAMPLES -->
-## Usage
+```sh
+docker stop onos # than run the docker first command again to run it again
+```
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+now this used to restart ONOS
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+docker restart onos
+```
 
+use this command if you face problem in onos, it will delete all configureation you make in onos, so you need to configure it again, just rebeat the process
+
+```sh
+docker stop onos
+docker rm onos
+```
+
+
+  
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
